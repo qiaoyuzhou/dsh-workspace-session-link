@@ -1,5 +1,7 @@
 # DSH 工作区会话链接插件
 
+[![test](https://github.com/qiaoyuzhou/dsh-workspace-session-link/actions/workflows/test.yml/badge.svg)](https://github.com/qiaoyuzhou/dsh-workspace-session-link/actions/workflows/test.yml)
+
 在 DSH 输入框里放一个「链接会话」按钮：写任务时点一下，只列出**当前工作区**里的其他会话，选中后插入一个会话引用 chip。发送时 DSH 自带的 `session-reference` 服务会把被引用会话的只读快照作为跨会话上下文交给模型，让模型在写这个工作区的任务时参考之前的会话。
 
 这里的“工作区”指 DSH 侧边栏里的工作区分组，不要求两个会话的 `cwd` 完全相等：只要会话属于同一个工作区，即使它是在工作区的子目录里启动的，也会出现在菜单里。
@@ -24,6 +26,14 @@
 
 ## 安装
 
+### 从 GitHub 安装
+
+```powershell
+& "$env:LOCALAPPDATA\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd" plugin --profile desktop add github:qiaoyuzhou/dsh-workspace-session-link
+```
+
+### 从本地目录安装
+
 Desktop 的 `desktop` profile 只允许 Desktop 随附的 `dsh.cmd` 管理；npm 版 `dsh` 会拒绝管理该 profile。因此使用安装目录下的命令：
 
 ```powershell
@@ -37,6 +47,16 @@ Desktop 的 `desktop` profile 只允许 Desktop 随附的 `dsh.cmd` 管理；npm
 ```powershell
 & "$env:LOCALAPPDATA\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd" plugin --profile desktop remove dsh-workspace-session-link
 ```
+
+## 从源码开发
+
+```powershell
+git clone https://github.com/qiaoyuzhou/dsh-workspace-session-link.git
+cd dsh-workspace-session-link
+node --test test/smoke.test.mjs
+```
+
+用本地目录安装时，把上面的 `link:E:\DSH链接插件` 换成克隆目录的绝对路径。仓库没有构建步骤，GitHub 上的 `lib/` 就是可直接加载的产物。
 
 ## 兼容性
 

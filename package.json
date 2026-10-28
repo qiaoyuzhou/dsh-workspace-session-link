@@ -4,6 +4,14 @@
   "description": "从 DSH 输入框链接当前工作区内的其他会话，让模型带着跨会话上下文完成任务",
   "type": "module",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiaoyuzhou/dsh-workspace-session-link.git"
+  },
+  "homepage": "https://github.com/qiaoyuzhou/dsh-workspace-session-link#readme",
+  "bugs": {
+    "url": "https://github.com/qiaoyuzhou/dsh-workspace-session-link/issues"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
