@@ -37,7 +37,7 @@
 Desktop 的 `desktop` profile 只允许 Desktop 随附的 `dsh.cmd` 管理；npm 版 `dsh` 会拒绝管理该 profile。因此使用安装目录下的命令：
 
 ```powershell
-& "$env:LOCALAPPDATA\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd" plugin --profile desktop add link:E:\DSH链接插件
+& "$env:LOCALAPPDATA\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd" plugin --profile desktop add link:C:\path\to\dsh-workspace-session-link
 ```
 
 安装完成后重启 DSH。重启后可在侧边栏「插件」页确认 `dsh-workspace-session-link` 已启用。
@@ -56,7 +56,7 @@ cd dsh-workspace-session-link
 node --test test/smoke.test.mjs
 ```
 
-用本地目录安装时，把上面的 `link:E:\DSH链接插件` 换成克隆目录的绝对路径。仓库没有构建步骤，GitHub 上的 `lib/` 就是可直接加载的产物。
+用本地目录安装时，把上面的 `C:\path\to\dsh-workspace-session-link` 换成克隆目录的绝对路径。仓库没有构建步骤，GitHub 上的 `lib/` 就是可直接加载的产物。
 
 ## 兼容性
 
