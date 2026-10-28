@@ -1,0 +1,6 @@
+# Bundle layer for dsh-workspace-session-link.
+# The host half is intentionally empty: the feature is browser UI plus the
+# already-shipped session-reference Host service.
+- insert:
+    - id: workspace-session-link
+      name: dsh-workspace-session-link

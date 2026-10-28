@@ -1,0 +1,12 @@
+# Dependencies and local tooling
+node_modules/
+.vs/
+*.tgz
+*.log
+*.tsbuildinfo
+.env
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
